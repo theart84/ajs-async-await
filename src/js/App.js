@@ -1,10 +1,8 @@
 import GameSavingLoader from './GameSavedLoader';
-import GameSaving from './GameSaving';
 
 (async () => {
   try {
-    const saving = await GameSavingLoader.load();
-    return new GameSaving(saving);
+    return await GameSavingLoader.load();
   } catch (err) {
     return Promise.reject(err);
   }
